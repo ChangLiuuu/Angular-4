@@ -1,0 +1,14 @@
+<div style="margin: 0px auto; width: 400px;">
+  <button type="button1"
+          class="btn btn-info">Add server1</button>
+
+  <button type="button2"
+          class="btn btn-warning">Add server2</button>
+
+  <button type="button3"
+          class="btn btn-danger">Add server3</button>
+</div>
+<hr>
+<button class="btn btn-danger"
+        [disabled] = "!allowNewServer">Add Server</button>
+<p>{{ 'Server' }} with {{ serverID }} is {{ getServerStatus() }}</p>
