@@ -2,11 +2,11 @@
 <!--<app-servers></app-servers>-->
 <!--</div>-->
 <ol>
-Assignment 2
-<li>Add a Input field which updates a property ('username') via Two-Way-Binding</li>
-<li>Output the username property via String Interpolation (in a paragraph below the input)</li>
-<li>Add a button which may only be clicked if the username is NOT an empty string</li>
-<li>Upon clicking the button, the username should be reset to an empty string</li>
+  Assignment 2
+  <li>Add a Input field which updates a property ('username') via Two-Way-Binding</li>
+  <li>Output the username property via String Interpolation (in a paragraph below the input)</li>
+  <li>Add a button which may only be clicked if the username is NOT an empty string</li>
+  <li>Upon clicking the button, the username should be reset to an empty string</li>
 </ol>
 
 <hr>
@@ -19,5 +19,27 @@ Assignment 2
 <button
   class="btn btn-info"
   [disabled]="!click()"
-  (click)="resetMethod($event)">&nbsp;reset &nbsp;
+  (click)="resetMethod()">&nbsp;reset &nbsp;
 </button>
+<p>{{ click() ? userName : serverTag }}</p>
+<hr>
+
+
+<p *ngIf="click(); else noServer">{{ userName }}</p>
+<ng-template #noServer>
+  <p>{{ serverTag }}</p>
+</ng-template>
+
+<div
+  [ngStyle]="{backgroundColor: getColor()}"
+  [ngClass]="{online : click()}">
+  <p>{{ click() ? userName : serverTag }}</p>
+</div>
+
+<!--This is for-->
+<button
+  class="btn btn-danger"
+  (click)="addServer()"> Add Server
+</button>
+<p *ngFor="let a of servers; let i = index">{{ servers[i] }}</p>
+<p *ngFor="let a of servers">{{ a }}</p>

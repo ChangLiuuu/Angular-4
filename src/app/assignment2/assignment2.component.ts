@@ -7,10 +7,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class Assignment2Component implements OnInit {
   userName = '';
-  clickStatus;
+  serverTag = 'No server.';
+  servers = ['TestServer'];
 
   constructor() {
-    this.clickStatus = false;
   }
 
   ngOnInit() {
@@ -22,10 +22,19 @@ export class Assignment2Component implements OnInit {
     } else {
       return true;
     }
+
   }
 
   resetMethod() {
     this.userName = '';
+    // this.showStatus = false;
+  }
 
+  getColor() {
+    return this.click() ? 'red' : 'green';
+  }
+
+  addServer () {
+    this.servers.push(this.userName);
   }
 }
