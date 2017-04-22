@@ -10,18 +10,23 @@ export class ServerComponent implements OnInit {
   serverID = 4355;
   serverStatus = 'online';
   allowNewServer = false;
-  constructor() {
-    // setTimeout(() => {
-    //   this.allowNewServer = true;
-    // }, 2000);
-  }
+  serverCreationStatus = "No server is added."
 
-  ngOnInit() {
+  constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
     }, 2000);
   }
 
+  ngOnInit() {
+    // setTimeout(() => {
+    //   this.allowNewServer = true;
+    // }, 2000);
+  }
+
+  onCreateServer() {
+    this.serverCreationStatus = "Add server successfully."
+  }
 
   getServerStatus() {
     return this.serverStatus;

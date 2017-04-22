@@ -10,5 +10,8 @@
 </div>
 <hr>
 <button class="btn btn-danger"
-        [disabled] = "!allowNewServer">Add Server</button>
+        [disabled] = "!allowNewServer"
+        (click)="onCreateServer()">Add Server</button>
+<h2>{{serverCreationStatus}}</h2>
+<!--<h2 [innerText]="allowNewServer"></h2>-->
 <p>{{ 'Server' }} with {{ serverID }} is {{ getServerStatus() }}</p>
